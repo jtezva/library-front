@@ -1,0 +1,30 @@
+Ext.define('Lybrary.model.Book',{
+    extend: 'Ext.data.Model',
+    fields:[{
+        type:'int',
+        name:'id'
+    },{
+        type:'string',
+        name:'name'
+    },{
+        type:'int',
+        name:'editorid'
+    },{
+        type:'int',
+        name:'categoryid'
+    },{
+        type:'int',
+        name:'statusid'
+    },
+    //fields form join
+    {
+        type:'string',
+        name:'editorialname'
+    },{
+        type:'string',
+        name:'categoryname'
+    },{
+        type:'string',
+        name:'statusname'
+    }]
+});

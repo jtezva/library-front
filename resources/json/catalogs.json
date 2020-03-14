@@ -1,0 +1,44 @@
+{
+    "success":true,
+    "data":[{
+        "table":"CATS",
+        "key": "1",
+        "value":"Fiction"
+    },{
+        "table":"CATS",
+        "key": "2",
+        "value":"Romance"
+    },{
+        "table":"CATS",
+        "key": "3",
+        "value":"Comedy"
+    },{
+        "table":"EDITS",
+        "key": "1",
+        "value":"Trillas"
+    },{
+        "table":"EDITS",
+        "key": "2",
+        "value":"McHill"
+    },{
+        "table":"EDITS",
+        "key": "1",
+        "value":"Pearson"
+    },{
+        "table":"Bstatus",
+        "key": "1",
+        "value":"Avalible"
+    },{
+        "table":"Bstatus",
+        "key": "2",
+        "value":"Not avalible"
+    },{
+        "table":"Rstatus",
+        "key": "1",
+        "value":"Open"
+    },{
+        "table":"Rstatus",
+        "key": "2",
+        "value":"Close"
+    }]
+}

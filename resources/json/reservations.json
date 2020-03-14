@@ -1,0 +1,22 @@
+{
+    "success":true,
+    "data":[{
+        "id":1,
+        "user":"juanito",
+        "bookid":1,
+        "start":"01/01/2020",
+        "end": "15/03/2020",
+        "statusid":1,
+        "bookname":"The holy Bible",
+        "statusname":"Closed"
+    },{
+        "id":2,
+        "user":"Marianita",
+        "bookid":2,
+        "start":"01/02/2020",
+        "end":"15/02/2020",
+        "statusid":2,
+        "bookname":"Kamasutra Advance",
+        "statusname":"Open"
+    }]
+}

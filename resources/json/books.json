@@ -1,0 +1,31 @@
+{
+    "success":true,
+    "data":[{
+        "id":1,
+        "name": "The holy Bible",
+        "editorid":1,
+        "categoryid":1,
+        "statusid":2,
+        "editorname": "Trillas",
+        "categoryname": "Fiction",
+        "statusname":"Not Avalible"
+    },{
+        "id":2,
+        "name": "Black Book Programing",
+        "editorid":2,
+        "categoryid":2,
+        "statusid":1,
+        "editorname": "McHill",
+        "categoryname": "Romance",
+        "statusname":"Avalible"
+    },{
+        "id":3,
+        "name": "Kamasutra Advance",
+        "editorid":3,
+        "categoryid":3,
+        "statusid":1,
+        "editorname": "Pirson",
+        "categoryname": "Comedy",
+        "statusname":"Avalible"
+    }]
+}
