@@ -9,7 +9,7 @@ Ext.define('Lybrary.view.CatalogGrid',{
         model: "Lybrary.model.Catalog",
         proxy:{
             type: 'ajax',
-            url: 'resources/json/catalogs.json',
+            url: 'http://localhost/libraryapi/endpoint/catalog/getAll.php',
             reader:{
                 type:'json',
                 rootProperty:'data'
@@ -17,18 +17,18 @@ Ext.define('Lybrary.view.CatalogGrid',{
         }
     },
     columns:[{
-        text:'Table',
+        text:'catalog',
         width:80,
-        dataIndex:'table'
+        dataIndex:'catalog'
     },{
-        text:'Key',
-        flex:1,
-        minWidth:100,
-        dataIndex:'key'
-    },{
-        text:'Value',
+        text:'value',
         flex:1,
         minWidth:100,
         dataIndex:'value'
+    },{
+        text:'display',
+        flex:1,
+        minWidth:100,
+        dataIndex:'display'
     }]
 });
