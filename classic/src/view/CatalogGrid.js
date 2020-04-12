@@ -1,9 +1,15 @@
 Ext.define('Lybrary.view.CatalogGrid',{
     extend: 'Ext.grid.Panel',
     xtype: 'cataloggrid',
+    controller:'cataloggrid',
     title: 'Catalog',
     minHeight:200,
     maxHeight: 400,
+    tbar:[{
+        text:'Add',
+        inconCls:'x-fa fa-plus',
+        handler:'onAddClick'
+    }],
     store:{
         autoLoad: true,
         model: "Lybrary.model.Catalog",
@@ -17,6 +23,20 @@ Ext.define('Lybrary.view.CatalogGrid',{
         }
     },
     columns:[{
+        xtype:'actioncolumn',
+        width:60,
+        items:[{
+            inconCls:'x-fa fa-edit',
+            tooltip:'Edit',
+            srtable:false,
+            handler: 'onRowEditClick'
+        },{
+            inconCls:'x-fa fa-close',
+            tooltip:'Delete',
+            srtable:false,
+            handler: 'onRowDeleteClick'
+        }]
+    },{
         text:'catalog',
         width:80,
         dataIndex:'catalog'
