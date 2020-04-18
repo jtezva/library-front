@@ -13,9 +13,9 @@ Ext.define('Lybrary.view.CatalogFromController',{
                 return;
             }
             let client=new Lybrary.view.LybraryClient();
-            let url='http://localhost/LibraryAPI/endpoint/catalog/insert.php'
+            let url='http://localhost/Library-api/endpoint/catalog/insert.php'
             if(view.getMode()==='update'){
-                url='http://localhost/LibraryAPI/endpoint/catalog/update.php?value='+values.value;
+                url='http://localhost/Library-api/endpoint/catalog/update.php?value='+values.value;
             }
             client.post({
                 url:url,

@@ -15,7 +15,7 @@ Ext.define('Lybrary.view.CatalogGrid',{
         model: "Lybrary.model.Catalog",
         proxy:{
             type: 'ajax',
-            url: 'http://localhost/libraryapi/endpoint/catalog/getAll.php',
+            url: 'http://localhost/library-api/endpoint/catalog/getAll.php',
             reader:{
                 type:'json',
                 rootProperty:'data'

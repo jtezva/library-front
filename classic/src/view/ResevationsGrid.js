@@ -15,7 +15,7 @@ Ext.define('Lybrary.view.ReservationGrid',{
         model: "Lybrary.model.Reservation",
         proxy:{
             type: 'ajax',
-            url: 'resources/json/reservations.json',
+            url: 'http://localhost/library-api/endpoint/reservation/getAll.php',
             reader:{
                 type:'json',
                 rootProperty:'data'
