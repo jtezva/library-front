@@ -1,6 +1,6 @@
-Ext.define('Lybrary.view.CatalogFromController',{
+Ext.define('Lybrary.view.BookFormController',{
     extend: 'Ext.app.ViewController',
-    alias: 'controller.catalogForm',
+    alias: 'controller.bookForm',
     
     onSaveClick:function(b){
         let me=this;
@@ -13,18 +13,18 @@ Ext.define('Lybrary.view.CatalogFromController',{
                 return;
             }
             let client=new Lybrary.view.LybraryClient();
-            let url='http://localhost/libraryapi/endpoint/catalog/insert.php'
+            let url='http://localhost/libraryapi/endpoint/book/insert.php'
             if(view.getMode()==='update'){
-                url='http://localhost/libraryapi/endpoint/catalog/update.php?value='+values.value;
+                url='http://localhost/libraryapi/endpoint/book/update.php?id='+values.id;
             }
             client.post({
                 url:url,
                 body:values,
                 success:function(){
                     if(view.getMode()==='insert'){
-                        Ext.toast('catalog inserte');
+                        Ext.toast('Book inserted');
                     }else{
-                        Ext.toast('catalog update');
+                        Ext.toast('Book updated');
                     }
                     view.fireEvent(view.getMode()+'Event',view);
                     view.close();

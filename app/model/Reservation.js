@@ -14,7 +14,7 @@ Ext.define('Lybrary.model.Reservation',{
         name:'start',
         dateFormat:'d/m/Y'
     },{
-        type:'int',
+        type:'string',
         name:'statusid'
     },
     //fields form join
