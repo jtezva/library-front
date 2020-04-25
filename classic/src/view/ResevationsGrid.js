@@ -15,14 +15,33 @@ Ext.define('Lybrary.view.ReservationGrid',{
         model: "Lybrary.model.Reservation",
         proxy:{
             type: 'ajax',
-            url: 'resources/json/reservations.json',
+            url: 'http://localhost/libraryapi/endpoint/reservation/getAll.php',
             reader:{
                 type:'json',
                 rootProperty:'data'
             }
         }
     },
+    tbar:[{
+        text:'Add',
+        iconCls:'x-fa fa-plus',
+        handler:'onAddClick'
+    }],
     columns:[{
+        xtype:'actioncolumn',
+        width:60,
+        items:[{
+            iconCls:'x-fa fa-edit',
+            tooltip:'Edit',
+            srtable:false,
+            handler:'onRowEditClick'
+        },{
+            iconCls:'x-fa fa-close',
+            tooltip:'Delete',
+            srtable:false,
+            handler: 'onRowDeleteClick'
+        }]
+    },{
         text:'ID',
         width:80,
         dataIndex:'id'
@@ -39,18 +58,21 @@ Ext.define('Lybrary.view.ReservationGrid',{
     },{
         xtype:'datecolumn',
         format:'d/m/Y',
-        text:'Start',
-        width:100,
+        text:'Start',  
+        flex:1,
+        minWidth:100,
         dataIndex:'start'
     },{
         xtype:'datecolumn',
         format:'d/m/Y',
-        text:'end',
-        width:100,
+        text:'End', 
+         flex:1,
+        minWidth:100,
         dataIndex:'end'
     },{
-        text:'Statusname',
-        width:80,
+        text:'Statusname',  
+        flex:1,
+        minWidth:100,
         dataIndex:'statusname'
     }]
 });

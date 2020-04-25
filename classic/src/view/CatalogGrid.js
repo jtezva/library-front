@@ -26,12 +26,12 @@ Ext.define('Lybrary.view.CatalogGrid',{
         xtype:'actioncolumn',
         width:60,
         items:[{
-            inconCls:'x-fa fa-edit',
+            iconCls:'x-fa fa-edit',
             tooltip:'Edit',
             srtable:false,
             handler: 'onRowEditClick'
         },{
-            inconCls:'x-fa fa-close',
+            iconCls:'x-fa fa-close',
             tooltip:'Delete',
             srtable:false,
             handler: 'onRowDeleteClick'

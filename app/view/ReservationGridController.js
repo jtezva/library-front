@@ -7,13 +7,42 @@ Ext.define('Lybrary.view.ReservationGridController',{
             view=me.getView();
         let form= Ext.create({
             xtype:'reservationform',
+            mode:'insert',
             listeners:{
-                close:function(){
+                insertEvent: function(){
                     view.getStore().reload();
-                    console.log('store reloaded by event listening at saved')
                 }
             }
         });
         form.show();
+    },
+    onRowDeleteClick: function(grid, a, b, c, d, record){
+        let me = this;
+        let view = me.getView();
+        if(confirm('Your record will be deleted, continue?')){
+            let client = new Lybrary.view.LybraryClient();
+            client.get({
+                url:'http://localhost/libraryapi/endpoint/reservation/delete.php?id='+record.get('id'),
+                success: function(){
+                    Ext.toast('Book deleted');
+                    view.getStore().reload();
+                }
+            });
+        }
+    },onRowEditClick: function(grid, a, b, c, d, record){
+        let me = this;
+        let view = me.getView();
+        let form=Ext.create({
+            xtype: 'reservationform',
+            mode: 'update',
+            listeners:{
+                updateEvent: function(){
+                    view.getStore().reload();
+                }
+            }
+        });
+        form.show();
+        form.down('form').loadRecord(record);
+        console.log(record.data);
     }
 })
