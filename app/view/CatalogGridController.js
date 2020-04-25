@@ -37,7 +37,7 @@ Ext.define('Lybrary.view.CatalogGridController',{
         if(confirm('Your record will be deleted, continue?')){
             let client = new Lybrary.view.LybraryClient();
             client.get({
-                url:'http://localhost/Library-api/endpoint/catalog/delete.php?value='+record.get('value'),
+                url:'http://localhost/library-api/endpoint/catalog/delete.php?value='+record.get('value'),
                 success: function(){
                     Ext.toast('Catalog deleted');
                     view.getStore().reload();

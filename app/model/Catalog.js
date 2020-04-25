@@ -8,6 +8,6 @@ Ext.define('Lybrary.model.Catalog',{
         name:'value'
     },{
         type:'string',
-        name:'dispaly'
+        name:'display'
     }]
 });
