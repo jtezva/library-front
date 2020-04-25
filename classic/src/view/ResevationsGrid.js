@@ -7,7 +7,7 @@ Ext.define('Lybrary.view.ReservationGrid',{
     maxHeight: 400,
     tbar:[{
         text:'Add',
-        inconCsl:'x-fa fa-plus',
+        iconCsl:'x-fa fa-plus',
         handler:'onAddClick'
     }],
     store:{

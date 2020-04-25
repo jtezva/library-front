@@ -25,7 +25,7 @@ Ext.define('Lybrary.view.ReservationForm',{
             xtype:"textfield",
             name:'user',
             fieldLabel:'User',
-            readOnly: true,
+            readOnly: false,
             minLength:3,
             maxLength:10
         },{
@@ -40,10 +40,10 @@ Ext.define('Lybrary.view.ReservationForm',{
                 model:'Lybrary.model.Book',
                 proxy:{
                     type:'ajax',
-                    url:'resources/json/books.json',
+                    url:'http://localhost/library-api/endpoint/book/getAll.php',
                     reader:{
                         type:'json',
-                        rootPropety:'data'
+                        rootProperty:'data'
                     }
                 }
             }
@@ -61,20 +61,20 @@ Ext.define('Lybrary.view.ReservationForm',{
             format:'d/m/Y'
         },{
             xtype:'combo',
-            name:'satusid',
+            name:'statusid',
             fieldLabel:'Status',
-            valueField:'id',
-            displayField:'name',
+            valueField:'catalog',
+            displayField:'display',
             allowBlank: false,
             store:{
                 autoLoad:true,
                 model:'Lybrary.model.Catalog',
                 proxy:{
                     type:'ajax',
-                    url:'resources/json/catalogs.json',
+                    url:'http://localhost/library-api/endpoint/catalog/findByCatalog.php?catalog=B_STAT',
                     reader:{
                         type:'json',
-                        rootPropety:'data'
+                        rootProperty:'data'
                     }
                 }
             }
