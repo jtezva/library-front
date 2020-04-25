@@ -7,19 +7,19 @@ Ext.define('Lybrary.model.Book',{
         type:'string',
         name:'name'
     },{
-        type:'int',
+        type:'string',
         name:'editorid'
     },{
-        type:'int',
+        type:'string',
         name:'categoryid'
     },{
-        type:'int',
+        type:'string',
         name:'statusid'
     },
     //fields form join
     {
         type:'string',
-        name:'editorialname'
+        name:'editorname'
     },{
         type:'string',
         name:'categoryname'
