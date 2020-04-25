@@ -9,7 +9,7 @@ Ext.define('Lybrary.view.BookGrid',{
         model: "Lybrary.model.Book",
         proxy:{
             type: 'ajax',
-            url: 'resources/json/books.json',
+            url: 'http://localhost/libraryapi/endpoint/book/getAll.php',
             reader:{
                 type:'json',
                 rootProperty:'data'
