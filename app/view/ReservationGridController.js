@@ -15,5 +15,38 @@ Ext.define('Lybrary.view.ReservationGridController',{
             }
         });
         form.show();
+    },
+    onRowEditClick: function(grid, a, b, c, d, record){
+        let me = this;
+        let view = me.getView();
+        let form=Ext.create({
+            xtype: 'reservationform',
+            mode: 'update',
+            listeners:{
+                updateEvent: function(){
+                    view.getStore().reload();
+                }
+            }
+        });
+        form.show();
+        form.down('form').loadRecord(record);
+    },
+
+    onRowDeleteClick: function(grid, a, b,c, d, record){
+        let me=this,
+        view=me.getView();
+        if(confirm('Your record will be deleted, continue?')){
+            let client = new Lybrary.view.LybraryClient();
+            client.get({
+                url:'http://localhost/libraryapi/endpoint/reservation/delete.php?id='+record.get('id'),
+                success:function(){
+                            Ext.toast('Reservation deleted');
+                            view.getStore().reload();
+               }
+            });
+
+        }
     }
+
+
 })
