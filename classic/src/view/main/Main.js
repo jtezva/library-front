@@ -92,7 +92,7 @@ Ext.define('Lybrary.view.main.Main', {
         }]
     },{
         
-        title: 'Catlogs',
+        title: 'Catalogs',
         iconCls: 'x-fa fa-cogs',
         // The following grid shares a store with the classic version's grid as well!
         items: [{

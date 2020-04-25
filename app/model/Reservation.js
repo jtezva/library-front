@@ -12,7 +12,7 @@ Ext.define('Lybrary.model.Reservation',{
     },{
         type:'date',
         name:'start',
-        dateFormat:'d/m/Y'
+        dateFormat:'Y-m-d'
     },{
         type:'string',
         name:'statusid'
@@ -27,6 +27,6 @@ Ext.define('Lybrary.model.Reservation',{
     }, {
         type:'date',
         name:'end',
-        dateFormat:'d/m/Y'
+        dateFormat:'Y-m-d'
     }]
 });

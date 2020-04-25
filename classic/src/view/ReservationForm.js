@@ -1,16 +1,27 @@
 Ext.define('Lybrary.view.ReservationForm',{
     extend:"Ext.window.Window",
     xtype:'reservationform',
-   // controller:'reservationform',
+
+    controller:'reservationform',
+
     title: 'Reservation',
     modal:true,
     scrollabel:true,
+
+    config: {
+        mode: null
+    },
     
     constructor: function (config) {
         config.maxWidth=Ext.getBody().getWidth()-100;
         config.maxHeigth=Ext.getBody().getHeight()-100;
         this.callParent(arguments);
     },
+
+    defaults: {
+        style: 'margin: 5px;'
+    },
+    
     items:[{
         xtype:'form',
         defaults:{
@@ -25,31 +36,30 @@ Ext.define('Lybrary.view.ReservationForm',{
             xtype:"textfield",
             name:'user',
             fieldLabel:'User',
-            readOnly: true,
             minLength:3,
             maxLength:10
-        },{
+        }, {
             xtype:'combo',
             name:'bookid',
             fieldLabel:'Book',
             valueField:'id',
             displayField:'name',
             allowBlank: false,
+            queryMode: 'local',
             store:{
                 autoLoad:true,
-                model:'Lybrary.model.Book',
                 proxy:{
                     type:'ajax',
-                    url:'resources/json/books.json',
+                    url:'http://localhost/libraryapi/endpoint/book/getAll.php',
                     reader:{
                         type:'json',
-                        rootPropety:'data'
+                        rootProperty:'data'
                     }
                 }
             }
-        },{
+        }, {
             xtype:'datefield',
-            name:'strat',
+            name:'start',
             fieldLabel:'Start',
             allowBlank:true,
             format:'d/m/Y'
@@ -59,29 +69,30 @@ Ext.define('Lybrary.view.ReservationForm',{
             fieldLabel:'End',
             allowBlank:true,
             format:'d/m/Y'
-        },{
+        }, {
             xtype:'combo',
-            name:'satusid',
+            name:'statusid',
             fieldLabel:'Status',
-            valueField:'id',
-            displayField:'name',
+            valueField:'value',
+            displayField:'display',
             allowBlank: false,
+            queryMode: 'local',
             store:{
                 autoLoad:true,
-                model:'Lybrary.model.Catalog',
+                fields: ['value', 'display'],
                 proxy:{
                     type:'ajax',
-                    url:'resources/json/catalogs.json',
+                    url:'http://localhost/libraryapi/endpoint/catalog/findByCatalog.php?catalog=R_STAT',
                     reader:{
                         type:'json',
-                        rootPropety:'data'
+                        rootProperty:'data'
                     }
                 }
             }
         }]
     }],
     buttons:[{
-        text:'save',
+        text:'Save',
         iconCls:'x-fa fa-save',
         handler:'onSaveClick'
     }]
