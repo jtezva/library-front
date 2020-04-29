@@ -7,7 +7,7 @@ Ext.define('Lybrary.view.CatalogGrid',{
     maxHeight: 400,
     tbar:[{
         text:'Add',
-        inconCls:'x-fa fa-plus',
+        iconCls:'x-fa fa-plus',
         handler:'onAddClick'
     }],
     store:{
