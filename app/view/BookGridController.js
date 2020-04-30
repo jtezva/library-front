@@ -1,12 +1,12 @@
-Ext.define('Lybrary.view.CatalogGridController',{
+Ext.define('Lybrary.view.BookGridController',{
     extend: 'Ext.app.ViewController',
-    alias: 'controller.cataloggrid',
+    alias: 'controller.bookgrid',
 
     onAddClick: function(b){
         let me = this;
         let view =me.getView();
         let form = Ext.create({
-            xtype:'catalogform',
+            xtype:'bookform',
             mode:'insert',
             listeners:{
                 insertEvent: function(){
@@ -20,7 +20,7 @@ Ext.define('Lybrary.view.CatalogGridController',{
         let me = this;
         let view = me.getView();
         let form=Ext.create({
-            xtype: 'catalogform',
+            xtype: 'bookform',
             mode: 'update',
             listeners:{
                 updateEvent: function(){
@@ -30,6 +30,7 @@ Ext.define('Lybrary.view.CatalogGridController',{
         });
         form.show();
         form.down('form').loadRecord(record);
+        console.log(record.data);
     },
     onRowDeleteClick: function(grid, a, b, c, d, record){
         let me = this;
@@ -37,9 +38,9 @@ Ext.define('Lybrary.view.CatalogGridController',{
         if(confirm('Your record will be deleted, continue?')){
             let client = new Lybrary.view.LybraryClient();
             client.get({
-                url:'http://localhost/LibraryAPI/endpoint/catalog/delete.php?value='+record.get('value'),
+                url:'http://localhost/libraryapi/endpoint/book/delete.php?id='+record.get('id'),
                 success: function(){
-                    Ext.toast('Catalog deleted');
+                    Ext.toast('Book deleted');
                     view.getStore().reload();
                 }
             });

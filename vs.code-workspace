@@ -7,18 +7,6 @@
 			"path": "..\\exercise"
 		},
 		{
-			"path": "..\\..\\..\\Users\\isaac\\Desktop\\MyLibrary\\resources"
-		},
-		{
-			"path": "..\\..\\..\\Users\\isaac\\Desktop\\MyLibrary\\classic\\src\\view"
-		},
-		{
-			"path": "..\\..\\..\\Users\\isaac\\Desktop\\MyLibrary\\modern\\src\\view"
-		},
-		{
-			"path": "..\\..\\..\\Users\\isaac\\Desktop\\MyLibrary\\app\\view\\main"
-		},
-		{
 			"path": "..\\C"
 		},
 		{
@@ -26,6 +14,9 @@
 		},
 		{
 			"path": "."
+		},
+		{
+			"path": "..\\temporal"
 		}
 	],
 	"settings": {}
