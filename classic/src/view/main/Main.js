@@ -37,7 +37,7 @@ Ext.define('Lybrary.view.main.Main', {
             },
             flex: 0
         },
-        iconCls: 'x-fa fa-th-list'
+        iconCls: 'x-fa fa-home'
     },
 
     tabBar: {
@@ -92,29 +92,11 @@ Ext.define('Lybrary.view.main.Main', {
         }]
     },{
         
-        title: 'Catlogs',
+        title: 'Catalogs',
         iconCls: 'x-fa fa-cogs',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
             xtype: 'cataloggrid'
         }]
-    },{
-        title: 'Users',
-        iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
     }]
 });
